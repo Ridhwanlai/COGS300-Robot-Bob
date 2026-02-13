@@ -45,12 +45,12 @@ const float KpSide           = 3.0f;   // steering gain
 const int   maxSteerPWM      = 90;     // cap steering
 
 // INSIDE CORNER tuning (these are the ones most affected by moving the sensor)
-const float insideTriggerCm  = 21.0f;  // start the inside turn BEFORE you reach stopDistanceCm
+const float insideTriggerCm  = 22.0f;  // start the inside turn BEFORE you reach stopDistanceCm
 const float frontClearCm     = 25.0f;  // consider "clear" when front distance is bigger than this
 
 // If the side sensor moved forward, it may "see" the front wall at corners.
 // This extra trigger helps catch inside corners even if frontDist doesn't dip enough:
-const float sideCornerTooCloseCm = 10.0f;  // if side distance suddenly drops below this near a corner, treat as inside corner
+const float sideCornerTooCloseCm = 9.9f;  // if side distance suddenly drops below this near a corner, treat as inside corner
 const float insideApproachCm     = 30.0f;  // only use the sideCornerTooClose trigger when front is within this range
 
 // Speeds
@@ -310,11 +310,11 @@ void loop() {
     }
 
     // Commit to an in-place turn so it actually corners even if side readings get weird
-    // if (INSIDE_TURN_LEFT) pivotLeft(turnPWM);
-    // else pivotRight(turnPWM);
+    if (INSIDE_TURN_LEFT) pivotLeft(turnPWM);
+    else pivotRight(turnPWM);
 
-    if (INSIDE_TURN_LEFT) pivotRight(turnPWM);
-    else pivotLeft(turnPWM);
+    // if (INSIDE_TURN_LEFT) pivotRight(turnPWM);
+    // else pivotLeft(turnPWM);
 
     // Don’t exit instantly (prevents jitter)
     if (t < minTurnMs) return;
