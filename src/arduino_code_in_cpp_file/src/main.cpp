@@ -137,7 +137,7 @@ const unsigned long  US_PERIOD_MS        = 60;
 
 
 // The robot is considered stuck if the front sensor reading stays unchanged for this many milliseconds.
-const unsigned long  US_STUCK_MS           = 3000UL;
+const unsigned long  US_STUCK_MS           = 2000UL;
 // The front sensor reading is considered unchanged if it varies by less than this many centimeters.
 const float          US_STUCK_BAND_CM      = 1.5f;
 // This is the PWM speed used for reversing during the first stuck recovery attempt.

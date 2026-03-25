@@ -93,9 +93,9 @@ const float          WF_RIGHT_TOLERANCE_CM  = 1.0f;
 // The right ultrasonic sensor can no longer detect a wall when the reading is above this value.
 const float          WF_RIGHT_LOST_CM       = 50.0f;
 // This is the PWM speed used for both wheels when driving straight.
-const int            WF_STRAIGHT_SPEED      = 130;
+const int            WF_STRAIGHT_SPEED      = 110;
 // This is the PWM speed used for hard pivot turns such as corners and right turns.
-const int            WF_TURN_SPEED          = 140;
+const int            WF_TURN_SPEED          = 120;
 // This is the PWM speed for the faster wheel when the robot curves to adjust its distance from the wall.
 const int            WF_CORRECT_OUTER       = 110;
 // This is the PWM speed for the slower wheel when the robot curves to adjust its distance from the wall.
@@ -137,7 +137,7 @@ const unsigned long  US_PERIOD_MS        = 60;
 
 
 // The robot is considered stuck if the front sensor reading stays unchanged for this many milliseconds.
-const unsigned long  US_STUCK_MS           = 3000UL;
+const unsigned long  US_STUCK_MS           = 2000UL;
 // The front sensor reading is considered unchanged if it varies by less than this many centimeters.
 const float          US_STUCK_BAND_CM      = 1.5f;
 // This is the PWM speed used for reversing during the first stuck recovery attempt.
