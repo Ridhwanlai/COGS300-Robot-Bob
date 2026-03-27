@@ -1,4 +1,5 @@
 # MyRobot
+COGS 300 Robot (Bob)
 
 
 
